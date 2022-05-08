@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Spring Boot Thymeleaf</title>
+<link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+	<h2></h2>
+	<h1>Create Student</h1>
+	<form action="#" th:action="@{/student/createstudent}"
+		th:object="${student}" method="POST">
+		<table >
+			<tr>
+				<td>Student Name</td>
+				<td><input type="text" th:field="*{name}" /> <!-- <label th:if="${#fields.hasErrors('userName')}"  th:class="'error'">Enter User Name</label> -->
+				</td>
+			</tr>
+			<tr>
+				<td>Roll Number</td>
+				<td><input type="text" th:field="*{rollNumber}" /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" th:value="Submit" /> <input
+					type="reset" th:value="Reset" /></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
